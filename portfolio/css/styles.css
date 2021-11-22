@@ -1,0 +1,185 @@
+/*Tutorial used: https://www.youtube.com/watch?v=r_hYR53r61M
+  Box shadow: https://www.cssmatic.com/box-shadow
+*/
+
+:root{
+  --mainText: #102124;
+  --secondaryText: #3C7680;
+
+  --borderColor: #706F83;
+
+  --mainColor: #C7D9F0;
+  --secondaryColor: white ;
+};
+
+body{
+  background-color: black;
+}
+
+html, body{
+  padding: 0;
+  margin: 0;
+}
+
+
+h1, h2, h3, h4, h5, h6, strong{
+  color: var(--mainText);
+  font-family: 'Anton', sans-serif;
+}
+
+
+p, li, span, label, input, textarea{
+  color: var(--secondaryText);
+  font-family: 'Open Sans', sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color: #8B3A5C;
+}
+
+ul{
+  list-style: none;
+}
+ /*overflow fills the page (no white border on top) */
+.section1 {
+  background-color: var(--mainColor);
+  border-bottom: 1px solid var(--borderColor);
+  overflow: auto;
+}
+
+.section2 {
+  background-color: var(--secondaryColor);
+  border-bottom: 1px solid var(--borderColor);
+  overflow: auto;
+}
+
+.main{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/*Justify centers vertically
+  align horizontally */
+.title-wrapper{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 10em;
+}
+
+.intro-wrapper{
+  background-color: var(--secondaryColor);
+  border: 0px solid var(--borderColor);
+  border-radius: 5px 5px 0 0;
+
+  -webkit-box-shadow: 3px 6px 17px -1px rgba(0,0,0,0.66);
+  -moz-box-shadow: 3px 6px 17px -1px rgba(0,0,0,0.66);
+  box-shadow: 3px 6px 17px -1px rgba(0,0,0,0.66);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* adds column in the grid per "fr" */
+
+  grid-template-areas: 
+    'state-wrapper state-wrapper'
+    'left-column right-column'
+
+  ; /* this sets up the order and position */
+}
+
+.state-wrapper{
+  background-color: var(--mainColor);
+  border-radius: 5px 5px 0 0;
+  grid-area: state-wrapper;
+  border-bottom: 1px solid var(--borderColor)
+
+}
+
+.left-column{
+  grid-area: left-column;
+  display: grid;
+  align-content: center;
+  margin-left: 5em;
+}
+
+.right-column{
+  grid-area: right-column;
+}
+
+#pic{
+  display: block;
+  margin: 5em auto;
+
+
+  height: 350px;
+  width: 350px;
+  border-radius: 50%;
+  object-fit: cover; 
+  -webkit-box-shadow: 3px 6px 17px -1px rgba(0,0,0,0.66);
+  -moz-box-shadow: 3px 6px 17px -1px rgba(0,0,0,0.66);
+  box-shadow: 3px 6px 17px -1px rgba(0,0,0,0.66);
+}
+
+
+#statement{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.about{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  padding-top: 50px;
+  padding-bottom: 50px;
+  gap:100px;
+}
+
+
+#skills{
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--mainColor);
+}
+
+
+#fixImage{
+  width: 45px;
+  height: auto;
+ }
+
+ #alignment{
+  text-align: center;
+ }
+
+ .posts{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 320px);
+  gap: 20px;
+  justify-content: center;
+  padding-bottom: 50px;
+ }
+
+.post{
+
+  border-radius: 5%;
+  background-color: var(--secondaryColor);
+
+  -webkit-box-shadow: 3px 6px 17px -1px rgba(0,0,0,0.66);
+  -moz-box-shadow: 3px 6px 17px -1px rgba(0,0,0,0.66);
+  box-shadow: 3px 6px 17px -1px rgba(0,0,0,0.66);
+}
+
+.description{
+  display: block;
+  text-align: center;
+}
+
+ .tumbnail{
+  display: block;
+  width: 50%;
+  padding-left: 25%;
+  padding-top: 15px;
+  border-radius: 50%;
+  object-fit: cover;
+ }
